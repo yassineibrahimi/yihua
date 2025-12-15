@@ -14,6 +14,7 @@ export function Header() {
     { href: '/', label: t('nav.home') },
     { href: '/about', label: t('nav.about') },
     { href: '/products', label: t('nav.products') },
+    { href: '/shoes', label: language === 'ar' ? 'الأحذية' : 'Shoes' },
     { href: '/contact', label: t('nav.contact') },
   ];
 
