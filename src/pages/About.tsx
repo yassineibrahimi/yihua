@@ -1,26 +1,30 @@
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { CheckCircle, Award, Globe, Users, Factory } from 'lucide-react';
+import { CheckCircle, Award, Globe, Users, Factory, Shield, Truck, Settings } from 'lucide-react';
 import factoryImage from '@/assets/about-factory.jpg';
 import factoryInterior from '@/assets/factory-interior.jpg';
+import showroom from '@/assets/showroom.jpg';
+import partners from '@/assets/partners.jpg';
 
 const About = () => {
   const { t, language } = useLanguage();
 
   const milestones = language === 'ar' 
     ? [
-        { year: '2005', text: 'تأسيس الشركة في روي آن، الصين' },
-        { year: '2010', text: 'توسيع قاعدة الإنتاج إلى 10,000 متر مربع' },
-        { year: '2015', text: 'إطلاق خطوط الإنتاج الذكية' },
+        { year: '2001', text: 'تأسيس الشركة في روي آن، الصين' },
+        { year: '2008', text: 'توسيع الفريق إلى 200 موظف' },
+        { year: '2012', text: 'الحصول على شهادة BSCI' },
+        { year: '2016', text: 'اجتياز تدقيق ديزني' },
         { year: '2020', text: 'التصدير إلى أكثر من 50 دولة' },
-        { year: '2024', text: 'إطلاق جيل جديد من آلات القطع الذكية' },
+        { year: '2024', text: 'توسيع الطاقة الإنتاجية إلى 18,000 زوج يومياً' },
       ]
     : [
-        { year: '2005', text: 'Company founded in Rui\'an, China' },
-        { year: '2010', text: 'Expanded production base to 10,000 sqm' },
-        { year: '2015', text: 'Launched intelligent production lines' },
+        { year: '2001', text: 'Company founded in Rui\'an, China' },
+        { year: '2008', text: 'Expanded team to 200 employees' },
+        { year: '2012', text: 'Obtained BSCI certification' },
+        { year: '2016', text: 'Passed Disney Audit' },
         { year: '2020', text: 'Exporting to 50+ countries' },
-        { year: '2024', text: 'New generation smart cutting machines released' },
+        { year: '2024', text: 'Expanded capacity to 18,000 pairs daily' },
       ];
 
   const values = [
@@ -28,29 +32,57 @@ const About = () => {
       icon: Award,
       titleEn: 'Quality First',
       titleAr: 'الجودة أولاً',
-      descEn: 'Every machine undergoes rigorous testing before delivery',
-      descAr: 'كل آلة تخضع لاختبارات صارمة قبل التسليم',
+      descEn: 'Self-testing for physical & chemical tests plus third-party testing',
+      descAr: 'اختبار ذاتي للفحوصات الفيزيائية والكيميائية بالإضافة إلى اختبار طرف ثالث',
     },
     {
       icon: Globe,
       titleEn: 'Global Reach',
       titleAr: 'الانتشار العالمي',
-      descEn: 'Serving customers in over 50 countries worldwide',
-      descAr: 'خدمة العملاء في أكثر من 50 دولة حول العالم',
+      descEn: 'Partners include Bata, ZARA, Disney, Walmart, K-SWISS & more',
+      descAr: 'شركاؤنا يشملون باتا، زارا، ديزني، وول مارت، كي سويس والمزيد',
     },
     {
       icon: Users,
-      titleEn: 'Expert Team',
-      titleAr: 'فريق خبراء',
-      descEn: 'Experienced engineers and technicians at your service',
-      descAr: 'مهندسون وفنيون ذوو خبرة في خدمتكم',
+      titleEn: '400+ Employees',
+      titleAr: '+400 موظف',
+      descEn: '6 technicians and 20 workers in sample room for R&D',
+      descAr: '6 فنيين و20 عاملاً في غرفة العينات للبحث والتطوير',
     },
     {
       icon: Factory,
-      titleEn: 'Innovation',
-      titleAr: 'الابتكار',
-      descEn: 'Continuous R&D for cutting-edge solutions',
-      descAr: 'البحث والتطوير المستمر لحلول متطورة',
+      titleEn: '4,000 SQM Factory',
+      titleAr: '4,000 متر مربع مصنع',
+      descEn: '3 production lines with 18,000 pairs daily output',
+      descAr: '3 خطوط إنتاج بطاقة 18,000 زوج يومياً',
+    },
+    {
+      icon: Shield,
+      titleEn: 'Certified Quality',
+      titleAr: 'جودة معتمدة',
+      descEn: 'BSCI certified & Disney Audit approved',
+      descAr: 'حاصلون على شهادة BSCI ومعتمدون من تدقيق ديزني',
+    },
+    {
+      icon: Truck,
+      titleEn: 'Fast Delivery',
+      titleAr: 'توصيل سريع',
+      descEn: 'One week lead time for samples',
+      descAr: 'أسبوع واحد للعينات',
+    },
+    {
+      icon: Settings,
+      titleEn: 'Eco Materials',
+      titleAr: 'مواد صديقة للبيئة',
+      descEn: 'Organic and recycled materials available',
+      descAr: 'مواد عضوية ومعاد تدويرها متاحة',
+    },
+    {
+      icon: CheckCircle,
+      titleEn: 'Full Service',
+      titleAr: 'خدمة كاملة',
+      descEn: 'Complete sales & after-sales service team',
+      descAr: 'فريق مبيعات وخدمة ما بعد البيع متكامل',
     },
   ];
 
@@ -77,12 +109,14 @@ const About = () => {
                 {language === 'ar' ? 'قصتنا' : 'Our Story'}
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                {t('about.description')}
+                {language === 'ar' 
+                  ? 'تأسست شركة ونتشو يهوا الصناعية عام 2001. نحن متخصصون في منطقة الأحذية المطاطية المهنية في مدينة روي آن. الآن لدينا 400 موظف. نحن أقوياء في الأحذية المفلكنة والأحذية بالحقن. كما ننتج ونبيع المواد الخام.'
+                  : 'Wenzhou Yihua Industry Co., Ltd. is established in 2001. We are located in the professional rubber shoes area Ruian city. Now we have 400 employees. We are strong at vulcanized shoes and injection shoes. We also produce and sale raw material.'}
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 {language === 'ar' 
-                  ? 'تماشياً مع موجة تحديث الصناعة، تقود الشركة في إدخال معدات الإنتاج المتخصصة عالية التقنية والجودة في مجال تصنيع الأحذية، وتروج بنشاط التقنيات الأساسية والمعدات الذكية للتصدير إلى الخارج.'
-                  : 'Based on the trend of industry upgrading, the company takes the lead in introducing high-tech, high-quality professional production equipment in shoe manufacturing, and actively promotes core technologies and intelligent equipment for overseas exports.'}
+                  ? 'لدينا مباني منفصلة للمبيعات والإنتاج. مع المعدات المتقدمة والجودة الممتازة والبحث والتطوير المتميز ونظام المبيعات الجيد والخدمة المثالية، نكتسب دائمًا سمعة رائعة من العملاء.'
+                  : 'We have separate sales and production buildings. With advanced equipment, excellent quality, top R&D, good sales system and perfect service, we always earn great reputation from customers.'}
               </p>
             </div>
             <div className="relative">
@@ -103,7 +137,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-heading">
-              {language === 'ar' ? 'قيمنا' : 'Our Values'}
+              {language === 'ar' ? 'لماذا نحن؟' : 'Why Choose Us?'}
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -124,8 +158,26 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Partners Image */}
       <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="section-heading">
+              {language === 'ar' ? 'شركاؤنا' : 'Our Partners'}
+            </h2>
+          </div>
+          <div className="aspect-[21/9] rounded-2xl overflow-hidden card-industrial">
+            <img 
+              src={partners} 
+              alt="Our Partners" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-heading">
@@ -156,15 +208,24 @@ const About = () => {
         </div>
       </section>
 
-      {/* Factory Image */}
-      <section className="py-16 bg-muted">
+      {/* Showroom & Factory Images */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="aspect-[21/9] rounded-2xl overflow-hidden card-industrial">
-            <img 
-              src={factoryInterior} 
-              alt="Factory Interior" 
-              className="w-full h-full object-cover"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="aspect-video rounded-2xl overflow-hidden card-industrial">
+              <img 
+                src={showroom} 
+                alt="Showroom" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-video rounded-2xl overflow-hidden card-industrial">
+              <img 
+                src={factoryInterior} 
+                alt="Factory Interior" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
