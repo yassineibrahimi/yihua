@@ -11,6 +11,11 @@ import cemented1 from '@/assets/shoes/cemented-1.jpg';
 import injection1 from '@/assets/shoes/injection-1.jpg';
 import injection2 from '@/assets/shoes/injection-2.jpg';
 import injection3 from '@/assets/shoes/injection-3.jpg';
+import chunkyBlue1 from '@/assets/shoes/chunky-blue-1.jpg';
+import chunkyPink1 from '@/assets/shoes/chunky-pink-1.jpg';
+import chunkyPink2 from '@/assets/shoes/chunky-pink-2.jpg';
+import retroRunner1 from '@/assets/shoes/retro-runner-1.jpg';
+import whiteRunner1 from '@/assets/shoes/white-runner-1.jpg';
 
 const Shoes = () => {
   const { language, t } = useLanguage();
@@ -87,10 +92,55 @@ const Shoes = () => {
       descEn: 'Ergonomic injection sole',
       descAr: 'نعل حقن مريح',
     },
+    {
+      id: 8,
+      category: 'injection',
+      image: chunkyBlue1,
+      titleEn: 'Chunky Platform Blue',
+      titleAr: 'حذاء سميك أزرق',
+      descEn: 'Modern chunky sole design',
+      descAr: 'تصميم نعل سميك عصري',
+    },
+    {
+      id: 9,
+      category: 'cemented',
+      image: chunkyPink1,
+      titleEn: 'Fashion Stripe Runner',
+      titleAr: 'حذاء رياضي مخطط',
+      descEn: 'Stylish stripe accent design',
+      descAr: 'تصميم مخطط أنيق',
+    },
+    {
+      id: 10,
+      category: 'cemented',
+      image: chunkyPink2,
+      titleEn: 'Pastel Runner',
+      titleAr: 'حذاء رياضي باستيل',
+      descEn: 'Soft color combination',
+      descAr: 'مزيج ألوان ناعمة',
+    },
+    {
+      id: 11,
+      category: 'vulcanized',
+      image: retroRunner1,
+      titleEn: 'Retro Collection',
+      titleAr: 'مجموعة ريترو',
+      descEn: 'Classic retro running style',
+      descAr: 'ستايل رياضي كلاسيكي',
+    },
+    {
+      id: 12,
+      category: 'injection',
+      image: whiteRunner1,
+      titleEn: 'Pure White Series',
+      titleAr: 'سلسلة بيضاء نقية',
+      descEn: 'Clean minimalist design',
+      descAr: 'تصميم أبيض بسيط',
+    },
   ];
 
   const filteredShoes = activeCategory === 'all' 
-    ? shoes 
+    ? shoes
     : shoes.filter(shoe => shoe.category === activeCategory);
 
   const whatsappNumber = '+8615888750003';
